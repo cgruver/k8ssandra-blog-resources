@@ -1,0 +1,40 @@
+apiVersion: k8ssandra.io/v1alpha1
+kind: K8ssandraCluster
+metadata:
+  name: k8ssandra-cluster
+spec:
+  cassandra:
+    serverVersion: ${CASS_VER}
+    serverImage: ${PROXY_REGISTRY}/k8ssandra/cass-management-api:${CASS_VER}
+    storageConfig:
+      cassandraDataVolumeClaimSpec:
+        storageClassName: rook-ceph-block
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: 20Gi
+    config:
+      jvmOptions:
+        heapSize: 1024M
+    networking:
+      hostNetwork: false 
+    datacenters:
+      - metadata:
+          name: dc1
+        k8sContext: okd4-region-01
+        size: 1
+        jmxInitContainerImage:
+          registry: ${PROXY_REGISTRY}
+          repository: k8ssandra
+          name: busybox
+          tag: ${BUSYBOX_VER}
+        stargate:
+          size: 3
+          heapSize: 512M
+          allowStargateOnDataNodes: true
+          containerImage: 
+            registry: ${PROXY_REGISTRY}
+            repository: k8ssandra
+            name: stargate-4_0
+            tag: ${STARGATE_VER}

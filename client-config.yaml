@@ -1,0 +1,8 @@
+apiVersion: config.k8ssandra.io/v1beta1
+kind: ClientConfig
+metadata:
+  name: ${cluster}
+spec:
+  contextName: ${cluster}
+  kubeConfigSecret:
+    name: ${cluster}-config

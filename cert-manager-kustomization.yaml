@@ -1,0 +1,12 @@
+resources:
+- ${K8SSANDRA_WORKDIR}/tmp/cert-manager.yaml
+images:
+- name: quay.io/jetstack/cert-manager-cainjector
+  newTag: ${CERT_MGR_VER}
+  newName: ${LOCAL_REGISTRY}/k8ssandra/cert-manager-cainjector
+- name: quay.io/jetstack/cert-manager-controller
+  newTag: ${CERT_MGR_VER}
+  newName: ${LOCAL_REGISTRY}/k8ssandra/cert-manager-controller
+- name: quay.io/jetstack/cert-manager-webhook
+  newTag: ${CERT_MGR_VER}
+  newName: ${LOCAL_REGISTRY}/k8ssandra/cert-manager-webhook

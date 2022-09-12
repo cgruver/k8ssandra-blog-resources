@@ -1,0 +1,10 @@
+namespace: k8ssandra-operator
+resources:
+- github.com/k8ssandra/k8ssandra-operator/config/deployments/${DEPLOY_TYPE}?ref=${K8SSANDRA_VER}
+images:
+- name: k8ssandra/k8ssandra-operator
+  newTag: ${K8SSANDRA_VER}
+  newName: ${PROXY_REGISTRY}/k8ssandra/k8ssandra-operator
+- name: k8ssandra/cass-operator
+  newTag: ${CASS_OPER_VER}
+  newName: ${PROXY_REGISTRY}/k8ssandra/cass-operator
