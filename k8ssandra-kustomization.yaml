@@ -4,7 +4,7 @@ resources:
 images:
 - name: k8ssandra/k8ssandra-operator
   newTag: ${K8SSANDRA_VER}
-  newName: ${PROXY_REGISTRY}/k8ssandra/k8ssandra-operator
+  newName: ${PULL_REGISTRY}/k8ssandra-operator/k8ssandra-operator
 - name: k8ssandra/cass-operator
   newTag: ${CASS_OPER_VER}
-  newName: ${PROXY_REGISTRY}/k8ssandra/cass-operator
+  newName: ${PROXY_REGISTRY}/k8ssandra-operator/cass-operator

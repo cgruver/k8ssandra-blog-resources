@@ -1,37 +1,49 @@
 images:
 - name: cert-manager-cainjector
-  registry: quay.io/jetstack
+  source_registry: quay.io/jetstack
+  target_registry: ${PUSH_REGISTRY}/cert-manager
   version: ${CERT_MGR_VER}
 - name: cert-manager-controller
-  registry: quay.io/jetstack
+  source_registry: quay.io/jetstack
+  target_registry: ${PUSH_REGISTRY}/cert-manager
   version: ${CERT_MGR_VER}
 - name: cert-manager-webhook
-  registry: quay.io/jetstack
+  source_registry: quay.io/jetstack
+  target_registry: ${PUSH_REGISTRY}/cert-manager
   version: ${CERT_MGR_VER}
 - name: cass-operator
-  registry: docker.io/k8ssandra
+  source_registry: docker.io/k8ssandra
+  target_registry: ${PUSH_REGISTRY}/k8ssandra-operator
   version: ${CASS_OPER_VER}
 - name: k8ssandra-operator
-  registry: docker.io/k8ssandra
+  source_registry: docker.io/k8ssandra
+  target_registry: ${PUSH_REGISTRY}/k8ssandra-operator
   version: ${K8SSANDRA_VER}
 - name: busybox
-  registry: docker.io/library
+  source_registry: docker.io/library
+  target_registry: ${PUSH_REGISTRY}/k8ssandra-operator
   version: ${BUSYBOX_VER}
 - name: stargate-4_0
-  registry: docker.io/stargateio
+  source_registry: docker.io/stargateio
+  target_registry: ${PUSH_REGISTRY}/k8ssandra-operator
   version: ${STARGATE_VER}
 - name: cassandra-reaper
-  registry: docker.io/thelastpickle
+  source_registry: docker.io/thelastpickle
+  target_registry: ${PUSH_REGISTRY}/k8ssandra-operator
   version: ${REAPER_VER}
 - name: medusa
-  registry: docker.io/k8ssandra
+  source_registry: docker.io/k8ssandra
+  target_registry: ${PUSH_REGISTRY}/k8ssandra-operator
   version: ${MEDUSA_VER}
 - name: cass-management-api
-  registry: docker.io/k8ssandra
+  source_registry: docker.io/k8ssandra
+  target_registry: ${PUSH_REGISTRY}/k8ssandra-operator
   version: ${CASS_VER}
 - name: system-logger
-  registry: docker.io/k8ssandra
+  source_registry: docker.io/k8ssandra
+  target_registry: ${PUSH_REGISTRY}/k8ssandra-operator
   version: ${CASS_OPER_VER}
 - name: cass-config-builder
-  registry: docker.io/datastax
+  source_registry: docker.io/datastax
+  target_registry: ${PUSH_REGISTRY}/k8ssandra-operator
   version: ${CASS_CONFIG_BUILDER_VER}

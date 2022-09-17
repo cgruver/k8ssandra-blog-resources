@@ -9,12 +9,12 @@ data:
     metadata:
       name: image-config
     images:
-      system-logger: "k8ssandra/system-logger:${CASS_OPER_VER}"
-      config-builder: "k8ssandra/cass-config-builder:${CASS_CONFIG_BUILDER_VER}"
+      system-logger: "k8ssandra-operator/system-logger:${CASS_OPER_VER}"
+      config-builder: "k8ssandra-operator/cass-config-builder:${CASS_CONFIG_BUILDER_VER}"
       cassandra:
-        "${CASS_VER}": "k8ssandra/cass-management-api:${CASS_VER}"
-    imageRegistry: "${PROXY_REGISTRY}"
+        "${CASS_VER}": "k8ssandra-operator/cass-management-api:${CASS_VER}"
+    imageRegistry: "${PULL_REGISTRY}"
     imagePullPolicy: IfNotPresent
     defaults:
       cassandra:
-        repository: "k8ssandra/cass-management-api"
+        repository: "k8ssandra-operator/cass-management-api"

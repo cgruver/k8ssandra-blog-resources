@@ -5,7 +5,7 @@ metadata:
 spec:
   cassandra:
     serverVersion: ${CASS_VER}
-    serverImage: ${PROXY_REGISTRY}/k8ssandra/cass-management-api:${CASS_VER}
+    serverImage: ${PULL_REGISTRY}/k8ssandra-operator/cass-management-api:${CASS_VER}
     storageConfig:
       cassandraDataVolumeClaimSpec:
         storageClassName: rook-ceph-block
@@ -25,8 +25,8 @@ spec:
         k8sContext: okd4-region-01
         size: 1
         jmxInitContainerImage:
-          registry: ${PROXY_REGISTRY}
-          repository: k8ssandra
+          registry: ${PULL_REGISTRY}
+          repository: k8ssandra-operator
           name: busybox
           tag: ${BUSYBOX_VER}
         stargate:
@@ -34,7 +34,7 @@ spec:
           heapSize: 512M
           allowStargateOnDataNodes: true
           containerImage: 
-            registry: ${PROXY_REGISTRY}
-            repository: k8ssandra
+            registry: ${PULL_REGISTRY}
+            repository: k8ssandra-operator
             name: stargate-4_0
             tag: ${STARGATE_VER}

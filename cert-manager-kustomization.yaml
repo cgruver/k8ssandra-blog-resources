@@ -3,10 +3,10 @@ resources:
 images:
 - name: quay.io/jetstack/cert-manager-cainjector
   newTag: ${CERT_MGR_VER}
-  newName: ${LOCAL_REGISTRY}/k8ssandra/cert-manager-cainjector
+  newName: ${PULL_REGISTRY}/cert-manager/cert-manager-cainjector
 - name: quay.io/jetstack/cert-manager-controller
   newTag: ${CERT_MGR_VER}
-  newName: ${LOCAL_REGISTRY}/k8ssandra/cert-manager-controller
+  newName: ${PULL_REGISTRY}/cert-manager/cert-manager-controller
 - name: quay.io/jetstack/cert-manager-webhook
   newTag: ${CERT_MGR_VER}
-  newName: ${LOCAL_REGISTRY}/k8ssandra/cert-manager-webhook
+  newName: ${PULL_REGISTRY}/cert-manager/cert-manager-webhook
