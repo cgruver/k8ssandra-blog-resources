@@ -8,12 +8,15 @@ spec:
     serverImage: ${PULL_REGISTRY}/k8ssandra-operator/cass-management-api:${CASS_VER}
     storageConfig:
       cassandraDataVolumeClaimSpec:
-        storageClassName: rook-ceph-block
+        storageClassName: k8ssandra-sc
         accessModes:
           - ReadWriteOnce
         resources:
           requests:
             storage: 20Gi
+        selector:
+          matchLabels:
+            app: k8ssandra-cluster
     config:
       jvmOptions:
         heapSize: 1024M
@@ -22,7 +25,6 @@ spec:
     datacenters:
       - metadata:
           name: dc1
-        k8sContext: okd4-region-01
         size: 1
         jmxInitContainerImage:
           registry: ${PULL_REGISTRY}
@@ -30,7 +32,7 @@ spec:
           name: busybox
           tag: ${BUSYBOX_VER}
         stargate:
-          size: 3
+          size: 1
           heapSize: 512M
           allowStargateOnDataNodes: true
           containerImage: 
