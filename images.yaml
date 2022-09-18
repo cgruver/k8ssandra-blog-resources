@@ -1,49 +1,49 @@
 images:
 - name: cert-manager-cainjector
-  source_registry: quay.io/jetstack
-  target_registry: ${PUSH_REGISTRY}/cert-manager
+  source-registry: quay.io/jetstack
+  target-registry: ${PUSH_REGISTRY}/cert-manager
   version: ${CERT_MGR_VER}
 - name: cert-manager-controller
-  source_registry: quay.io/jetstack
-  target_registry: ${PUSH_REGISTRY}/cert-manager
+  source-registry: quay.io/jetstack
+  target-registry: ${PUSH_REGISTRY}/cert-manager
   version: ${CERT_MGR_VER}
 - name: cert-manager-webhook
-  source_registry: quay.io/jetstack
-  target_registry: ${PUSH_REGISTRY}/cert-manager
+  source-registry: quay.io/jetstack
+  target-registry: ${PUSH_REGISTRY}/cert-manager
   version: ${CERT_MGR_VER}
 - name: cass-operator
-  source_registry: docker.io/k8ssandra
-  target_registry: ${PUSH_REGISTRY}/k8ssandra-operator
+  source-registry: docker.io/k8ssandra
+  target-registry: ${PUSH_REGISTRY}/k8ssandra-operator
   version: ${CASS_OPER_VER}
 - name: k8ssandra-operator
-  source_registry: docker.io/k8ssandra
-  target_registry: ${PUSH_REGISTRY}/k8ssandra-operator
+  source-registry: docker.io/k8ssandra
+  target-registry: ${PUSH_REGISTRY}/k8ssandra-operator
   version: ${K8SSANDRA_VER}
 - name: busybox
-  source_registry: docker.io/library
-  target_registry: ${PUSH_REGISTRY}/k8ssandra-operator
+  source-registry: docker.io/library
+  target-registry: ${PUSH_REGISTRY}/k8ssandra-operator
   version: ${BUSYBOX_VER}
 - name: stargate-4_0
-  source_registry: docker.io/stargateio
-  target_registry: ${PUSH_REGISTRY}/k8ssandra-operator
+  source-registry: docker.io/stargateio
+  target-registry: ${PUSH_REGISTRY}/k8ssandra-operator
   version: ${STARGATE_VER}
 - name: cassandra-reaper
-  source_registry: docker.io/thelastpickle
-  target_registry: ${PUSH_REGISTRY}/k8ssandra-operator
+  source-registry: docker.io/thelastpickle
+  target-registry: ${PUSH_REGISTRY}/k8ssandra-operator
   version: ${REAPER_VER}
 - name: medusa
-  source_registry: docker.io/k8ssandra
-  target_registry: ${PUSH_REGISTRY}/k8ssandra-operator
+  source-registry: docker.io/k8ssandra
+  target-registry: ${PUSH_REGISTRY}/k8ssandra-operator
   version: ${MEDUSA_VER}
 - name: cass-management-api
-  source_registry: docker.io/k8ssandra
-  target_registry: ${PUSH_REGISTRY}/k8ssandra-operator
+  source-registry: docker.io/k8ssandra
+  target-registry: ${PUSH_REGISTRY}/k8ssandra-operator
   version: ${CASS_VER}
 - name: system-logger
-  source_registry: docker.io/k8ssandra
-  target_registry: ${PUSH_REGISTRY}/k8ssandra-operator
+  source-registry: docker.io/k8ssandra
+  target-registry: ${PUSH_REGISTRY}/k8ssandra-operator
   version: ${CASS_OPER_VER}
 - name: cass-config-builder
-  source_registry: docker.io/datastax
-  target_registry: ${PUSH_REGISTRY}/k8ssandra-operator
+  source-registry: docker.io/datastax
+  target-registry: ${PUSH_REGISTRY}/k8ssandra-operator
   version: ${CASS_CONFIG_BUILDER_VER}
