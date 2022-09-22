@@ -7,4 +7,4 @@ images:
   newName: ${PULL_REGISTRY}/k8ssandra-operator/k8ssandra-operator
 - name: k8ssandra/cass-operator
   newTag: ${CASS_OPER_VER}
-  newName: ${PROXY_REGISTRY}/k8ssandra-operator/cass-operator
+  newName: ${PULL_REGISTRY}/k8ssandra-operator/cass-operator
