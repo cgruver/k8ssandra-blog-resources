@@ -83,7 +83,7 @@ podman buildx build --arch=arm64 --build-arg VERSION=${VERSION} --build-arg ARCH
 podman manifest add ${IMAGE_TAG_BASE}:${CASS_OPER_VER} containers-storage:${IMAGE_TAG_BASE}:arm64
 
 IMAGE_TAG_BASE=${PUSH_REGISTRY}/k8ssandra-operator/system-logger
-podman buildx build --arch=arm64 --build-arg VERSION=${VERSION} --load -t ${IMAGE_TAG_BASE}:arm64  -f logger.Dockerfile . 
+podman buildx build --arch=arm64 --build-arg VERSION=${VERSION} --build-arg TINI_BIN=tini-arm64 --load -t ${IMAGE_TAG_BASE}:arm64  -f logger.Dockerfile . 
 podman manifest add ${IMAGE_TAG_BASE}:${CASS_OPER_VER} containers-storage:${IMAGE_TAG_BASE}:arm64
 ```
 
