@@ -1,6 +1,6 @@
 namespace: k8ssandra-operator
 resources:
-- github.com/k8ssandra/k8ssandra-operator/config/deployments/${DEPLOY_TYPE}?ref=${K8SSANDRA_VER}
+- github.com/k8ssandra/k8ssandra-operator/config/deployments/control-plane?ref=${K8SSANDRA_VER}
 images:
 - name: k8ssandra/k8ssandra-operator
   newTag: ${K8SSANDRA_VER}
