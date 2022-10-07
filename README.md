@@ -61,7 +61,7 @@ done
 ### K8ssandra Operator
 
 ```bash
-git clone https://github.com/k8ssandra/k8ssandra-operator.git ${K8SSANDRA_WORKDIR}/build/k8ssandra-operator
+git clone https://github.com/cgruver/k8ssandra-operator.git ${K8SSANDRA_WORKDIR}/build/k8ssandra-operator
 cd ${K8SSANDRA_WORKDIR}/build/k8ssandra-operator
 git checkout ${K8SSANDRA_VER}
 
@@ -73,7 +73,7 @@ podman manifest add ${IMAGE_TAG_BASE}:${K8SSANDRA_VER} containers-storage:${IMAG
 ### Cass Operator
 
 ```bash
-git clone https://github.com/k8ssandra/cass-operator.git ${K8SSANDRA_WORKDIR}/build/cass-operator
+git clone https://github.com/cgruver/cass-operator.git ${K8SSANDRA_WORKDIR}/build/cass-operator
 cd ${K8SSANDRA_WORKDIR}/build/cass-operator
 git checkout ${CASS_OPER_VER}
 VERSION=$(echo ${CASS_OPER_VER} | cut -d'v' -f2)
@@ -86,20 +86,6 @@ IMAGE_TAG_BASE=${PUSH_REGISTRY}/k8ssandra-operator/system-logger
 podman buildx build --arch=arm64 --build-arg VERSION=${VERSION} --build-arg TINI_BIN=tini-arm64 --load -t ${IMAGE_TAG_BASE}:arm64  -f logger.Dockerfile . 
 podman manifest add ${IMAGE_TAG_BASE}:${CASS_OPER_VER} containers-storage:${IMAGE_TAG_BASE}:arm64
 ```
-
-### Cass Config Builder
-
-```bash
-https://github.com/datastax/cass-config-builder.git
-
-### Cassandra Reaper
-
-```
-git clone https://github.com/thelastpickle/cassandra-reaper.git ${K8SSANDRA_WORKDIR}/build/cassandra-reaper
-
-cd ${K8SSANDRA_WORKDIR}/build/cassandra-reaper
-
-mvn clean package
 
 ## Push Manifests to Registry
 
@@ -115,4 +101,16 @@ do
   podman manifest push --all --tls-verify=false ${target_registry}/${image_name}:${image_version}  ${target_registry}/${image_name}:${image_version}
   image_index=$(( ${image_index} + 1 ))
 done
+```
+
+## Work In Progress For Additional Images
+
+### Cassandra Reaper
+
+```bash
+git clone https://github.com/thelastpickle/cassandra-reaper.git ${K8SSANDRA_WORKDIR}/build/cassandra-reaper
+
+cd ${K8SSANDRA_WORKDIR}/build/cassandra-reaper
+
+mvn clean package
 ```
