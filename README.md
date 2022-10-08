@@ -2,7 +2,7 @@
 
 This project contains the configuration resources for a demo of Quarkus with Cassandra and Stargate:
 
-* Blog Post: [Quarkus for Architects who Sometimes Write Code - Being Persistent - Part 01](https://upstreamwithoutapaddle.com/blog%20post/2022/10/08/Quarkus-For-Architects-03.html)
+* Blog Post: [Quarkus for Architects who Sometimes Write Code - Being Persistent - Part 01](https://upstreamwithoutapaddle.com/blog%20post/quarkus%20series/2022/10/08/Quarkus-For-Architects-03.html)
 * Blog Main Page: [Upstream - Without A Paddle](https://upstreamwithoutapaddle.com/)
 
 ## Building K8ssandra for `arm64`
