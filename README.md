@@ -2,7 +2,7 @@
 
 This project contains the configuration resources for a demo of Quarkus with Cassandra and Stargate:
 
-* Blog Post: __Not Posted Yet__ `[Quarkus for Architects who Sometimes Write Code - Being Persistent](https://upstreamwithoutapaddle.com/blog%20post/2022/09/24/Quarkus-For-Architects-03.html)`
+* Blog Post: [Quarkus for Architects who Sometimes Write Code - Being Persistent - Part 01](https://upstreamwithoutapaddle.com/blog%20post/2022/10/08/Quarkus-For-Architects-03.html)
 * Blog Main Page: [Upstream - Without A Paddle](https://upstreamwithoutapaddle.com/)
 
 ## Building K8ssandra for `arm64`
@@ -15,7 +15,7 @@ podman login ${PUSH_REGISTRY}
 export BUILDAH_FORMAT=docker
 ```
 
-```
+```bash
 export K8SSANDRA_WORKDIR=${HOME}/okd-lab/quarkus-projects/k8ssandra-work-dir
 rm -rf ${K8SSANDRA_WORKDIR}/build
 mkdir -p ${K8SSANDRA_WORKDIR}/build
@@ -54,8 +54,6 @@ do
   podman image rm ${source_registry}/${image_name}:${image_version}
   image_index=$(( ${image_index} + 1 ))
 done
-
-
 ```
 
 ### K8ssandra Operator

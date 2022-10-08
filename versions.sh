@@ -5,6 +5,6 @@ export BUSYBOX_VER=1.34.1
 export STARGATE_VER=v1.0.45
 export REAPER_VER=3.2.0
 export CASS_VER=4.0.1
-# export CASS_CONFIG_BUILDER_VER=1.0.4-ubi7
+# export CASS_CONFIG_BUILDER_VER=1.0.4-ubi7 (Does not support multi-arch)
 export CASS_CONFIG_BUILDER_VER=1.0.4
 export MEDUSA_VER=0.13.4
