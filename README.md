@@ -19,6 +19,7 @@ export BUILDAH_FORMAT=docker
 export K8SSANDRA_WORKDIR=${HOME}/okd-lab/quarkus-projects/k8ssandra-work-dir
 rm -rf ${K8SSANDRA_WORKDIR}/build
 mkdir -p ${K8SSANDRA_WORKDIR}/build
+git clone https://github.com/cgruver/k8ssandra-blog-resources.git ${K8SSANDRA_WORKDIR}/k8ssandra-blog-resources
 . ${K8SSANDRA_WORKDIR}/k8ssandra-blog-resources/versions.sh
 ```
 
@@ -32,6 +33,9 @@ image_count=$(yq e ".images" ${IMAGE_YAML} | yq e 'length' -)
 let image_index=0
 while [[ image_index -lt ${image_count} ]]
 do
+  image_name=$(yq e ".images.[${image_index}].name" ${IMAGE_YAML})
+  target_registry=$(yq e ".images.[${image_index}].target-registry" ${IMAGE_YAML})
+  image_version=$(yq e ".images.[${image_index}].version" ${IMAGE_YAML})
   podman manifest rm ${target_registry}/${image_name}:${image_version}
   image_index=$(( ${image_index} + 1 ))
 done
