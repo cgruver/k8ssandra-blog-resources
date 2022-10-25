@@ -83,7 +83,7 @@
 									"});",
 									"pm.test(\"Verify namespace name\", function () {",
 									"    var jsonData = pm.response.json();",
-									"    pm.expect(jsonData.name).to.eql(pm.variables.get(\"namespace\"));",
+									"    pm.expect(jsonData.name).to.eql(\"home_library\");",
 									";",
 									"});"
 								],
