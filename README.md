@@ -116,3 +116,13 @@ cd ${K8SSANDRA_WORKDIR}/build/cassandra-reaper
 
 mvn clean package
 ```
+
+## Notes for MicroShift
+
+```bash
+oc create route edge sg-graphql --service=k8ssandra-cluster-dc1-stargate-service --port=8080 -n k8ssandra-operator --hostname=sg-graphql-k8ssandra-operator.apps-crc.testing --dry-run=client -ojson | jq '.spec.to.kind="Service"' | oc create -f -
+
+oc create route edge sg-auth --service=k8ssandra-cluster-dc1-stargate-service --port=8081 -n k8ssandra-operator --hostname=sg-auth-k8ssandra-operator.apps-crc.testing --dry-run=client -ojson | jq '.spec.to.kind="Service"' | oc create -f -
+
+oc create route edge sg-rest --service=k8ssandra-cluster-dc1-stargate-service --port=8082 -n k8ssandra-operator --hostname=sg-rest-k8ssandra-operator.apps-crc.testing --dry-run=client -ojson | jq '.spec.to.kind="Service"' | oc create -f -
+```
