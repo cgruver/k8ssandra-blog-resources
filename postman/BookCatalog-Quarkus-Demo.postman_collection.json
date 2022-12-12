@@ -1,14 +1,14 @@
 {
 	"info": {
-		"_postman_id": "2a249ca2-e4ca-411f-a73a-5088fcae8d12",
-		"name": "Book Catalog - Blog Post - Full Collection",
-		"description": "Collection for K8ssandra and Stargate Demo",
+		"_postman_id": "dbd37b0e-d700-4518-b3a9-59192494055d",
+		"name": "Book Catalog - Quarkus Demo Collection",
+		"description": "Collection for Quarkus with K8ssandra and Stargate Demo",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "13441479"
 	},
 	"item": [
 		{
-			"name": "Stargate Document API",
+			"name": "Book Catalog Stargate Demo",
 			"item": [
 				{
 					"name": "create-auth-token",
@@ -439,6 +439,57 @@
 					"response": []
 				},
 				{
+					"name": "Get by CatalogId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "(Required) The token returned from the authorization endpoint. Use this token in each request to the database.",
+								"key": "X-Cassandra-Token",
+								"value": "{{AUTH_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url}}{{base_doc_api}}/home_library/collections/book_catalog/OL24385514M",
+							"host": [
+								"{{base_url}}{{base_doc_api}}"
+							],
+							"path": [
+								"home_library",
+								"collections",
+								"book_catalog",
+								"OL24385514M"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Delete book_catalog Collection",
 					"event": [
 						{
@@ -484,7 +535,7 @@
 			]
 		},
 		{
-			"name": "Open Library",
+			"name": "Open Library Queries",
 			"item": [
 				{
 					"name": "Open Library Wyrd Sisters",
@@ -545,10 +596,10 @@
 			]
 		},
 		{
-			"name": "Book Catalog Demo",
+			"name": "Book Catalog Quarkus Demo",
 			"item": [
 				{
-					"name": "Setup Copy",
+					"name": "Setup",
 					"item": [
 						{
 							"name": "create-auth-token",
@@ -707,7 +758,7 @@
 					]
 				},
 				{
-					"name": "Book Catalog Queries Copy",
+					"name": "Book Catalog Queries",
 					"item": [
 						{
 							"name": "Get Thud Info From OpenLibrary.org",
@@ -921,11 +972,29 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "Get Book Info By CatalogID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{book_catalog_url}}/book-by-id/OL24385514M",
+									"host": [
+										"{{book_catalog_url}}"
+									],
+									"path": [
+										"book-by-id",
+										"OL24385514M"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
 				{
-					"name": "Clean Up Copy",
+					"name": "Clean Up",
 					"item": [
 						{
 							"name": "create-auth-token",
