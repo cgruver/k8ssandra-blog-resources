@@ -851,7 +851,7 @@
 							"response": []
 						},
 						{
-							"name": "Get A The Wee Free Men From OpenLibrary.org",
+							"name": "Get The Wee Free Men From OpenLibrary.org",
 							"event": [
 								{
 									"listen": "test",
@@ -881,7 +881,7 @@
 							"response": []
 						},
 						{
-							"name": "Get A Night Watch From OpenLibrary.org",
+							"name": "Get Night Watch From OpenLibrary.org",
 							"event": [
 								{
 									"listen": "test",
