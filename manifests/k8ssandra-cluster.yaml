@@ -8,15 +8,12 @@ spec:
     serverImage: ${PULL_REGISTRY}/k8ssandra-operator/cass-management-api:${CASS_VER}
     storageConfig:
       cassandraDataVolumeClaimSpec:
-        storageClassName: k8ssandra-sc
+        storageClassName: crc-csi-hostpath-provisioner
         accessModes:
           - ReadWriteOnce
         resources:
           requests:
             storage: 20Gi
-        selector:
-          matchLabels:
-            app: k8ssandra-cluster
     config:
       jvmOptions:
         heapSize: 1024M
